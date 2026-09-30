@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#edf2ed">
+    <title>D3 Charts Dashboard | TV Power Consumption</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js" defer></script>
+    <script src="js/scatter.js" defer></script>
+    <script src="js/donut.js" defer></script>
+    <script src="js/bar.js" defer></script>
+    <script src="js/line.js" defer></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand-row">
+                <span class="brand-mark" aria-hidden="true">D3</span>
+                <span class="brand-caption">DATA FIELDNOTES <span> / </span> AUSTRALIA</span>
+            </div>
+            <div class="header-copy">
+                <div>
+                    <p class="eyebrow">ENERGY AT HOME</p>
+                    <h1>D3 Charts<br class="mobile-break"> Dashboard</h1>
+                </div>
+                <div class="header-aside">
+                    <p class="header-description">TV power consumption</p>
+                    <p class="header-detail">A closer look at screen technology, energy labels, and the changing cost of power.</p>
+                </div>
+            </div>
+            <div class="header-rule"><span>01</span><span>CONSUMPTION / TECHNOLOGY / TIME</span><span>1998 — 2024</span></div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <section class="section-intro" aria-labelledby="overview-title">
+            <div>
+                <p class="eyebrow">THE OVERVIEW</p>
+                <h2 id="overview-title">What powers the picture?</h2>
+            </div>
+            <p>Explore how television energy use shifts with star ratings and screen type, alongside the long view of Australian spot power prices.</p>
+        </section>
+
+        <section class="chart-grid" aria-label="Television energy and electricity price charts">
+            <article class="chart-card chart-card--scatter">
+                <div class="card-heading">
+                    <div class="card-index">01 <span> / TV LABELS</span></div>
+                    <h3>Efficiency has a range</h3>
+                    <p>Energy consumption against star rating. Each mark represents a grouped TV listing.</p>
+                </div>
+                <div class="chart-frame">
+                    <svg id="scatter-chart" role="img" aria-label="Scatter plot of television energy consumption against star rating"></svg>
+                    <p class="chart-status" id="scatter-status" role="status">Loading TV records…</p>
+                </div>
+            </article>
+
+            <article class="chart-card chart-card--donut">
+                <div class="card-heading">
+                    <div class="card-index">02 <span> / SCREEN TYPES</span></div>
+                    <h3>Different screens, different draw</h3>
+                    <p>Mean annual energy use by screen technology, across all screen sizes.</p>
+                </div>
+                <div class="chart-frame chart-frame--donut">
+                    <svg id="donut-chart" role="img" aria-label="Donut chart comparing mean annual energy consumption by screen technology"></svg>
+                    <div class="chart-legend" id="donut-legend" aria-label="Screen technology legend"></div>
+                    <p class="chart-status" id="donut-status" role="status">Loading all-size averages…</p>
+                </div>
+            </article>
+
+            <article class="chart-card chart-card--bar">
+                <div class="card-heading">
+                    <div class="card-index">03 <span> / 55-INCH TVS</span></div>
+                    <h3>Big screen, bigger demand?</h3>
+                    <p>Average labelled annual energy consumption, compared by screen technology.</p>
+                </div>
+                <div class="chart-frame">
+                    <svg id="bar-chart" role="img" aria-label="Bar chart of average energy consumption for 55-inch televisions by screen technology"></svg>
+                    <p class="chart-status" id="bar-status" role="status">Loading 55-inch averages…</p>
+                </div>
+            </article>
+
+            <article class="chart-card chart-card--line">
+                <div class="card-heading">
+                    <div class="card-index">04 <span> / AUSTRALIAN SPOT MARKET</span></div>
+                    <h3>Power prices, year by year</h3>
+                    <p>Annual average spot price from 1998 to 2024, in Australian dollars per megawatt hour.</p>
+                </div>
+                <div class="chart-frame">
+                    <svg id="line-chart" role="img" aria-label="Line chart of annual average Australian spot power prices from 1998 to 2024"></svg>
+                    <p class="chart-status" id="line-status" role="status">Loading spot prices…</p>
+                </div>
+            </article>
+        </section>
+
+        <footer class="page-footer">
+            <span>TV ENERGY / AUSTRALIAN SPOT PRICES</span>
+            <span>DATA VISUALISATION <span class="footer-dot">●</span> D3</span>
+        </footer>
+    </main>
+</body>
